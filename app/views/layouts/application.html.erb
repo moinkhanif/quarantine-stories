@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to "Quarantine Stories", root_path %></li>
+      </ul>
+      <ul>
+        <% @categories.each do |cat|  %>
+          <li> <%= link_to cat.name, category_path(cat)%> </li>
+        <% end %>
+      </ul>
+      <ul>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign Up!</a></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
