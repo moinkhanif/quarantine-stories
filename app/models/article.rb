@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
-  validates :title, :body, :user, presence: true
   belongs_to :user
-  belongs_to :category, default: "uncategorized"
+  belongs_to :category
   has_many :votes
 end
