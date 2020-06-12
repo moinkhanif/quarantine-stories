@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ *,
+ *::after,
+ *::before {
+   margin: 0;
+   padding: 0;
+ }
