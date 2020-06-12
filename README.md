@@ -10,6 +10,7 @@ The UI of this project is adapted from [liFEsTlye](https://www.behance.net/galle
 
 - Production link: [Production link](https://quarantine-stories.herokuapp.com/)
 - Staging Link: [Staging  link](https://infinite-retreat-30494.herokuapp.com/)
+- Feature/stories branch: [Deployment link](https://quarantine-s-feature-st-ssqn8p.herokuapp.com/)
 
 ### `This project is still in process. Please check back later`
 
