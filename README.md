@@ -21,7 +21,7 @@ The UI of this project is adapted from [liFEsTlye](https://www.behance.net/galle
 
 ## Data Model
 
-![Project's ERD](./docs/quarantine-stories-database-erd.png)
+![Project's ERD](./docs/quarantine-stories-erd.png)
 <!-- .element style="width=100px;" -->
 
 ## Requirements
