@@ -17,6 +17,7 @@ The UI of this project is adapted from [liFEsTlye](https://www.behance.net/galle
 - Project Links
   - Production link: [Production link](https://quarantine-stories.herokuapp.com/)
   - Staging Link: [Staging  link](https://infinite-retreat-30494.herokuapp.com/)
+  - PR deployment link: [deployment link](https://quarantine-s-feature-st-ssqn8p.herokuapp.com/)
 
 ## Data Model
 
