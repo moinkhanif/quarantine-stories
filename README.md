@@ -1,5 +1,7 @@
 # Quarantine Stories
 
+![Quarantine Stories](./app/assets/images/logo/facebook_cover_photo_2.png)
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
