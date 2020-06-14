@@ -15,13 +15,18 @@
         <li><%= link_to "Quarantine Stories", root_path %></li>
       </ul>
       <ul>
+      <li><%= link_to "Home", root_path %></li>
         <% all_categories.each do |cat|  %>
           <li> <%= link_to cat.name, category_path(cat)%> </li>
         <% end if !all_categories.empty? %>
       </ul>
       <ul>
-        <li><a href="#">Sign In</a></li>
+      <% if logged_in? %>
+        <li><%= link_to "Logout", logout_path %></li>
+      <% else %>
+        <li> <%= link_to "Sign in", login_path %> </li>
         <li> <%= link_to "Sign up", signup_path %> </li>
+      <% end %>
       </ul>
     </nav>
     <% flash.each do |name, msg| %>
