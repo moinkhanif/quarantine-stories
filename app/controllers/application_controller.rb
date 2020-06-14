@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    !!current_user
+    current_user != false
   end
 
   helper_method :all_categories, :current_user, :logged_in?
