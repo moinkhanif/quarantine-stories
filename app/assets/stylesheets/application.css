@@ -33,13 +33,20 @@ li {
   list-style: none;
 }
 
-.alert {
+.alert,
+.notice {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 10px 1px 10px 1px;
-  background-color: rgb(194, 73, 73);
   margin-bottom: 10px;
+}
+.alert {
+  background-color: rgb(194, 73, 73);
+}
+
+.notice {
+  background-color: seagreen;
 }
 
 .d-flex {
@@ -57,11 +64,27 @@ li {
   margin: auto 10px;
 }
 
+.nav li {
+  margin: auto 10px;
+}
+
 main {
   margin: 20px auto ;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main form {
   display: block;
   max-width: 500px;
   margin: auto;
+}
+
+.logo > img {
+  max-width: 300px;
+  margin-top: 0;
+  object-fit: contain;
+  overflow: hidden;
+  text-align: end;
 }

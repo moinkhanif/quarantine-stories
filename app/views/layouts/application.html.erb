@@ -13,7 +13,7 @@
     <header>
       <nav class="d-flex nav top-nav">
         <ul>
-          <li><%= link_to "Quarantine Stories", root_path %></li>
+          <li><%= link_to image_tag("logo/logonav.png",  alt: "Logo"), root_path , class:  "logo" %></li>
         </ul>
         <ul class="d-flex">
           <li><%= link_to "Home", root_path %></li>
@@ -23,6 +23,7 @@
         </ul>
         <ul class="d-flex">
         <% if logged_in? %>
+          <li> <%=  link_to current_user.name.capitalize,  root_path%> </li>
           <li><%= link_to "Logout", logout_path %></li>
         <% else %>
           <li> <%= link_to "Sign in", login_path %> </li>
@@ -31,18 +32,24 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <% flash.each do |name, msg| %>
-      <div class="alert" role="alert">
-        <%= msg %>
-      </div>
+    <% flash.each do |name, msg| %>
+      <% if notice.present? %>
+        <div class="notice">
+          <p> <%= msg %> </p>
+        </div>
+      <% elsif alert.present? %>
+        <div class="alert">
+          <p> <%= msg %> </p>
+        </div>
       <% end %>
+    <% end if !flash.empty? %>
+    <main>
       <%= yield %>
     </main>
     <footer>
       <div class="nav d-flex">
         <ul>
-          <li><%= link_to "Quarantine Stories", root_path %></li>
+          <li><%= link_to image_tag("logo/logonav.png",  alt: "Logo"), root_path , class:  "logo" %></li>
         </ul>
         <div class="d-flex">
           <ul class="d-flex">
