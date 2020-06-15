@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   resources :category  do
-    resources :article
+    resources :article, only: [:show]
   end
+  resources :article, except: [:show]
 end

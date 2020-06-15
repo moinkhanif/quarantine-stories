@@ -20,15 +20,19 @@
           <% all_categories.each do |cat|  %>
             <li> <%= link_to cat.name, category_path(cat)%> </li>
           <% end if !all_categories.empty? %>
+          <% if all_categories.size > 6 %>
+            <li> <%= link_to "All Categories", category_index_path%> </li>
+          <% end %>
         </ul>
         <ul class="d-flex">
         <% if logged_in? %>
           <li> <%=  link_to current_user.name.capitalize,  root_path%> </li>
           <li><%= link_to "Logout", logout_path %></li>
         <% else %>
-          <li> <%= link_to "Sign in", login_path %> </li>
+          <li> <%= link_to "Sign in", login_path %> </li> |
           <li> <%= link_to "Sign up", signup_path %> </li>
         <% end %>
+          <li><%= link_to image_tag("search.svg"), "#",  class: "search" %></li>
         </ul>
       </nav>
     </header>
@@ -49,7 +53,7 @@
     <footer>
       <div class="nav d-flex">
         <ul>
-          <li><%= link_to image_tag("logo/logonav.png",  alt: "Logo"), root_path , class:  "logo" %></li>
+          <li><%= link_to "Quarantine Stories", root_path , class:  "logo" %></li>
         </ul>
         <div class="d-flex">
           <ul class="d-flex">
@@ -65,9 +69,9 @@
         <div class="d-flex">
           <span>Connect with us:</span>
           <ul class="d-flex">
-            <li><img src="." alt="Twitter"></li>
-            <li><img src="." alt="Instagram"></li>
-            <li><img src="." alt="Facebook"></li>
+            <li><%= link_to image_tag("twitter.svg",  alt: "Twitter Icon"), root_path , class:  "social" %></li>
+            <li><%= link_to image_tag("instagram-sketched.svg",  alt: "Instagram Icon"), root_path , class:  "social" %></li>
+            <li><%= link_to image_tag("facebook.svg",  alt: "Facebook Icon"), root_path , class:  "social" %></li>
           </ul>
         </div>
       </div>

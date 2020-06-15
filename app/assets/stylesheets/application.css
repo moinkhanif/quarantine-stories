@@ -23,10 +23,21 @@
 
  body {
   font-family: Arial, Helvetica, sans-serif;
+  max-width: 1400px;
+  margin: auto;
+  background-color: rgb(78,68,62);
+}
+
+body > * {
+  background-color: whitesmoke;
 }
 
 a {
   text-decoration: none;
+}
+
+a:active {
+  color: rgb(253,96,0);
 }
 
 li {
@@ -60,6 +71,11 @@ li {
   height: 80px;
 }
 
+.nav .search img {
+  height: 15px;
+  width: 15px;
+}
+
 .nav span {
   margin: auto 10px;
 }
@@ -69,11 +85,8 @@ li {
 }
 
 main {
-  margin: 20px auto ;
+  /* m ; */
   min-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 main form {
   display: block;
@@ -83,8 +96,31 @@ main form {
 
 .logo > img {
   max-width: 300px;
-  margin-top: 0;
+  margin-top: 10px;
   object-fit: contain;
   overflow: hidden;
   text-align: end;
 }
+
+.social > img {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgb(253,96,0);
+}
+
+footer {
+  background-color: rgb(78,68,62);
+  color: aliceblue;
+}
+
+footer a {
+  color: rgb(253,96,0);
+}
+
+footer .logo {
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
