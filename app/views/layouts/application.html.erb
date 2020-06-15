@@ -26,7 +26,12 @@
         </ul>
         <ul class="d-flex">
         <% if logged_in? %>
-          <li> <%=  link_to current_user.name.capitalize,  root_path%> </li>
+          <li class="multi-li"> <%=  link_to current_user.name.capitalize,  root_path%>
+            <ul>
+              <li> <%= link_to "Create Article", new_article_path %> </li>
+              <li>jhgkbhj</li>
+            </ul>
+          </li>
           <li><%= link_to "Logout", logout_path %></li>
         <% else %>
           <li> <%= link_to "Sign in", login_path %> </li> |

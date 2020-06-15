@@ -50,7 +50,6 @@ li {
   font-size: 1.5rem;
   text-align: center;
   padding: 10px 1px 10px 1px;
-  margin-bottom: 10px;
 }
 .alert {
   background-color: rgb(194, 73, 73);
@@ -84,8 +83,31 @@ li {
   margin: auto 10px;
 }
 
+
+.multi-li {
+  position: relative;
+}
+
+.multi-li:hover ul {
+  display: block;
+}
+
+.multi-li ul {
+  position: absolute;
+  display: none;
+  padding-top: 10px;
+}
+
+.multi-li li {
+  margin: 0;
+  display: inline-block;
+  width: 100px;
+  padding: 5px 20px 5px 0;
+  /* line-height: 100px; */
+}
+
 main {
-  /* m ; */
+  padding-top: 20px;
   min-height: 60vh;
 }
 main form {
