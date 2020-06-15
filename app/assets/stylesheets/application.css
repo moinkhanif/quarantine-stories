@@ -24,3 +24,44 @@
  body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.alert {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px 1px 10px 1px;
+  background-color: rgb(194, 73, 73);
+  margin-bottom: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 20px;
+  height: 80px;
+}
+
+.nav span {
+  margin: auto 10px;
+}
+
+main {
+  margin: 20px auto ;
+}
+main form {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+}

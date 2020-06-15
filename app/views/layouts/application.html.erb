@@ -10,30 +10,60 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to "Quarantine Stories", root_path %></li>
-      </ul>
-      <ul>
-      <li><%= link_to "Home", root_path %></li>
-        <% all_categories.each do |cat|  %>
-          <li> <%= link_to cat.name, category_path(cat)%> </li>
-        <% end if !all_categories.empty? %>
-      </ul>
-      <ul>
-      <% if logged_in? %>
-        <li><%= link_to "Logout", logout_path %></li>
-      <% else %>
-        <li> <%= link_to "Sign in", login_path %> </li>
-        <li> <%= link_to "Sign up", signup_path %> </li>
-      <% end %>
-      </ul>
-    </nav>
-    <% flash.each do |name, msg| %>
+    <header>
+      <nav class="d-flex nav top-nav">
+        <ul>
+          <li><%= link_to "Quarantine Stories", root_path %></li>
+        </ul>
+        <ul class="d-flex">
+          <li><%= link_to "Home", root_path %></li>
+          <% all_categories.each do |cat|  %>
+            <li> <%= link_to cat.name, category_path(cat)%> </li>
+          <% end if !all_categories.empty? %>
+        </ul>
+        <ul class="d-flex">
+        <% if logged_in? %>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li> <%= link_to "Sign in", login_path %> </li>
+          <li> <%= link_to "Sign up", signup_path %> </li>
+        <% end %>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <% flash.each do |name, msg| %>
       <div class="alert" role="alert">
         <%= msg %>
       </div>
-    <% end %> 
-    <%= yield %>
+      <% end %>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="nav d-flex">
+        <ul>
+          <li><%= link_to "Quarantine Stories", root_path %></li>
+        </ul>
+        <div class="d-flex">
+          <ul class="d-flex">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#">Terms and conditions</a>
+            </li>
+          </ul>
+          <span>Copyright &copy;2020. All rights reserved</span>
+        </div>
+        <div class="d-flex">
+          <span>Connect with us:</span>
+          <ul class="d-flex">
+            <li><img src="." alt="Twitter"></li>
+            <li><img src="." alt="Instagram"></li>
+            <li><img src="." alt="Facebook"></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
