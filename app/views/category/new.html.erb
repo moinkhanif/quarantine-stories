@@ -1,0 +1,5 @@
+<%= form_with model: @category, url: '/category' do |c| %>
+  Enter the Category name: <br>
+  <%= text_field :category, :name %> <br>
+  <%= c.submit "Create Category"%>  
+<% end %>

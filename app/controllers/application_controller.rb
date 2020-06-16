@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  def five_categories
+    Category.all.limit(5)
+  end
+
   def all_categories
     Category.all
   end
@@ -15,5 +19,5 @@ class ApplicationController < ActionController::Base
     current_user != false
   end
 
-  helper_method :all_categories, :current_user, :logged_in?
+  helper_method :five_categories, :current_user, :logged_in?, :all_categories
 end

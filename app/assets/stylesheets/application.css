@@ -23,8 +23,8 @@
 
  body {
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 1400px;
-  margin: auto;
+  /* max-width: 1400px; */
+  /* margin: auto; */
   background-color: rgb(78,68,62);
 }
 
@@ -103,11 +103,19 @@ li {
   display: inline-block;
   width: 100px;
   padding: 5px 20px 5px 0;
-  /* line-height: 100px; */
+}
+
+.multi-li span {
+  margin: 0;
+  margin-left: 2px;
+}
+
+.multi-li .down-arrow {
+  width: 10px;
 }
 
 main {
-  padding-top: 20px;
+  padding: 20px;
   min-height: 60vh;
 }
 main form {
@@ -130,6 +138,11 @@ main form {
   padding: 10px;
   border-radius: 50%;
   background-color: rgb(253,96,0);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 footer {

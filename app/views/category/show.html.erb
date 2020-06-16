@@ -1,3 +1,19 @@
-<div class="category-title">
+<div class="page-title">
   <h1>Category: <%= @category.name%> </h1>
+</div>
+<div class="category-articles">
+  <% @articles.each do |article| %>
+    <article>
+      <figure>
+        <%= article.image.exists? ? image_tag(article.image.url) : image_tag('laptop-ph1.jpg') %>
+      </figure>
+      <div class="article-content">
+        <div>
+          <h2 class="article-title"><%= article.title %></h2>
+          <h4 class="author"> <%= User.find(article.user_id).name %> </h4>
+          <p class="article-body"> <%= article.body%> </p>
+        </div>
+      </div>
+    </article>
+  <% end %>
 </div>
