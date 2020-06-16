@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources :category  do
     resources :article, only: [:show]
   end
-  resources :article, except: [:show]
+  resources :article, except: [:show] do
+    resources :vote, only: [:create,:destroy]
+  end
 end

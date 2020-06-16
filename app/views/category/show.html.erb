@@ -12,6 +12,22 @@
           <h2 class="article-title"><%= article.title %></h2>
           <h4 class="author">by <%= User.find(article.user_id).name.capitalize %> </h4>
           <p class="article-body"> <%= article.body.truncate(300)%> </p>
+          <div class="article-votes">
+            <% if logged_in? %>
+              <% vote = Vote.find_by(article: article, user: current_user)%>
+              <% if vote %>
+                <%= button_to "unvote", article_vote_path(article_id: article.id), method: :delete  %>
+              <% else %>
+                <%= button_to "vote", article_vote_index_path(article_id: article.id)%>
+              <% end %>
+              
+            <% else %>
+              <%= button_to "vote", {}, {disabled: true}%>
+            <% end %>
+            <span>
+              <%= article.votes.size==1 ? "1 vote" : "#{article.votes.size} votes" %>
+            </span>
+          </div> 
         </div>
       </div>
     </article>

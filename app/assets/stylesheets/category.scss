@@ -23,12 +23,22 @@
     .article-content {
       width: 50%;
       & > div {
-        padding-left: 30px;
-        padding-top: 20px;
+        padding: 20px 10px 10px 30px;
       }
       .author {
         margin: 10px auto;
         color: rgb(253,96,0);
+      }
+      .article-votes {
+        margin-top: 10px;
+      }
+      .button_to {
+        margin: 10px auto;
+        display: inline;
+        input {
+          padding: 5px 10px;
+        }
+        
       }
     }
     img {

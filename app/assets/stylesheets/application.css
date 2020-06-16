@@ -101,7 +101,8 @@ li {
 .multi-li li {
   margin: 0;
   display: inline-block;
-  width: 100px;
+  width: 120px;
+  background-color: whitesmoke;
   padding: 5px 20px 5px 0;
 }
 
