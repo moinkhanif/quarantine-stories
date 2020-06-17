@@ -5,7 +5,7 @@
   <% @articles.each do |article| %>
     <article>
       <figure>
-        <%= article.image.exists? ? image_tag(article.image.url) : image_tag('laptop-ph1.jpg') %>
+        <%= article.image.exists? ? image_tag(article.image.url) : image_tag("https://picsum.photos/500") %>
       </figure>
       <div class="article-content">
         <div>

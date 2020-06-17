@@ -1,5 +1,7 @@
 <%= form_with model: @category, url: '/category' do |c| %>
   Enter the Category name: <br>
-  <%= text_field :category, :name %> <br>
+  <%= text_field :category, :name %> <br><br>
+  Enter category priority: <br>
+  <%= number_field :category, :priority%> <br><br>
   <%= c.submit "Create Category"%>  
 <% end %>

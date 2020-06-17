@@ -1,2 +1,22 @@
-<h1>Quarantine Stories</h1>
+<div class="featured-row">
+  <div class="featured-articles">
+    <% if !@categories.empty? %>
+      <article style="background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25), rgb(0, 0, 0, 0.9) 100%), url(<%= @featured_article.image.exists? ? @featured_article.image.url : "https://picsum.photos/600/1000" %>) no-repeat center;">
+        <h2 class="article-title"><%= @featured_article.title%></h2>
+      </article>
+    <% end %>
+  </div>
+  <div class="weather">
+    <%=image_tag("drizzle.svg")%>
+  </div>
+</div>
+<div class="featured-categories">
+  <% @categories.each do |category| %>
+  <% article = category.articles.order(created_at: :desc).first  %>
+    <article style="background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25), rgb(0, 0, 0, 0.9) 100%), url(<%= (article and article.image.exists?) ? article.image.url : "https://picsum.photos/500" %>) no-repeat center;">
+        <h2><%=  link_to category.name, category_path(category)%></h2>
+        <h3><%= article.title if article %></h3>
+    </article>
+  <% end %>
+</div>
 

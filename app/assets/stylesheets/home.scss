@@ -2,5 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.featured-row {
+  height: 500px;
+  display: flex;
+
+  .featured-articles {
+    width: 80%;;
+    height: 100%;
+    article {
+      height: 100%;
+      position: relative;
+      // background-repeat: no-repeat !important;
+      background-size: cover !important;
+      .article-title {
+        position: absolute;
+        bottom: 0;
+        padding: 30px;
+        font-size: 2rem;
+        color: rgb(253,96,0);
+      }
+    }
+  }
+  .weather {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://cdn.pixabay.com/photo/2020/06/14/22/46/the-caucasus-5299607_1280.jpg");
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.featured-categories {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-auto-rows: 300px;
+  article {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 a,
+    h3 {
+      color: whitesmoke;
+    }
+  }
+}
 
 

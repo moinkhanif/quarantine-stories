@@ -12,8 +12,8 @@
     overflow: hidden;
     height: 350px;
     display: flex;
-    &:nth-child(3n+3),
-    &:nth-child(3n+4){
+    &:nth-child(4n+3),
+    &:nth-child(4n+4){
       flex-direction: row-reverse;
     }
     figure  {
@@ -35,10 +35,10 @@
       .button_to {
         margin: 10px auto;
         display: inline;
+        position: relative;
         input {
           padding: 5px 10px;
         }
-        
       }
     }
     img {
