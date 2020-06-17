@@ -12,7 +12,7 @@
 </div>
 <div class="featured-categories">
   <% @categories.each do |category| %>
-  <% article = category.articles.order(created_at: :desc).first  %>
+  <% article = category.articles.sort_by(&:created_at).last  %>
     <article style="background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25), rgb(0, 0, 0, 0.9) 100%), url(<%= (article and article.image.exists?) ? article.image.url : "https://source.unsplash.com/random" %>) no-repeat center;">
         <h2><%=  link_to category.name, category_path(category)%></h2>
         <h3><%= article.title if article %></h3>

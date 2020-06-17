@@ -1,3 +1,6 @@
+<div class="page-title">
+  <h1>Sign In:</h1>
+</div>
 <%= form_with(url: login_path, class: 'sign-up') do |u| %>
   Enter your name: <%= text_field(:user,:name)  %>
   <%= u.submit "Login"%>

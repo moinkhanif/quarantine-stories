@@ -1,7 +1,7 @@
 class CategoryController < ApplicationController
   def show
-    @category = Category.find(params[:id])
-    @articles = @category.articles.order('articles DESC')
+    @category = Category.includes(:articles).find(params[:id])
+    @articles = @category.articles.joins('LEFT JOIN User on id = articles.user_id').order('articles DESC').includes(:votes,:user)
   end
 
   def new; end
