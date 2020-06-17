@@ -7,6 +7,9 @@
   margin: 30px auto;
   display: grid;
   grid-template-columns: 50% 50%;
+  .no-content {
+    color: grey;
+  }
   article {
     width: 100%;
     overflow: hidden;

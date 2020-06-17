@@ -2,34 +2,40 @@
   <h1>Category: <%= @category.name%> </h1>
 </div>
 <div class="category-articles">
-  <% @articles.each do |article| %>
-    <article>
-      <figure>
-        <%= article.image.exists? ? image_tag(article.image.url) : image_tag("https://source.unsplash.com/random") %>
-      </figure>
-      <div class="article-content">
-        <div>
-          <h2 class="article-title"><%= article.title %></h2>
-          <h4 class="author">by <%= article.user.name.capitalize %> </h4>
-          <p class="article-body"> <%= article.body.truncate(300)%> </p>
-          <div class="article-votes">
-            <% if logged_in? %>
-              <% vote = Vote.find_by(article: article, user: current_user)%>
-              <% if vote %>
-                <%= button_to "unvote", article_vote_path(article_id: article.id), method: :delete  %>
+  <% if @articles.empty? %>
+    <div class="no-content">
+      <h2>No Articles to show</h2>
+    </div>
+  <% else %>
+    <% @articles.each do |article| %>
+      <article>
+        <figure>
+          <%= article.image.exists? ? image_tag(article.image.url) : image_tag("https://source.unsplash.com/random") %>
+        </figure>
+        <div class="article-content">
+          <div>
+            <h2 class="article-title"><%= article.title %></h2>
+            <h4 class="author">by <%= article.user.name.capitalize %> </h4>
+            <p class="article-body"> <%= article.body.truncate(300)%> </p>
+            <div class="article-votes">
+              <% if logged_in? %>
+                <% vote = Vote.find_by(article: article, user: current_user)%>
+                <% if vote %>
+                  <%= button_to "unvote", article_vote_path(article_id: article.id), method: :delete  %>
+                <% else %>
+                  <%= button_to "vote", article_vote_index_path(article_id: article.id)%>
+                <% end %>
+                
               <% else %>
-                <%= button_to "vote", article_vote_index_path(article_id: article.id)%>
+                <%= button_to "vote", {}, {disabled: true}%>
               <% end %>
-              
-            <% else %>
-              <%= button_to "vote", {}, {disabled: true}%>
-            <% end %>
-            <span>
-              <%= article.votes.size==1 ? "1 vote" : "#{article.votes.size} votes" %>
-            </span>
-          </div> 
+              <span>
+                <%= article.votes.size==1 ? "1 vote" : "#{article.votes.size} votes" %>
+              </span>
+            </div> 
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    <% end %>
   <% end %>
 </div>
