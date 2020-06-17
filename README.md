@@ -1,11 +1,13 @@
 # Quarantine Stories
 
-![Quarantine Stories](./app/assets/images/logo/facebook_cover_photo_2.png)
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+
+![Quarantine Stories](./app/assets/images/logo/facebook_cover_photo_2.png)
+
+## About the project
 
 The idea of this project is for users to document your journey during quarentine and for indivituals to share their experiences during this tough time - 2020.
 
@@ -13,9 +15,6 @@ The idea of this project is for users to document your journey during quarentine
 
 The UI of this project is adapted from [liFEsTlye](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) and the project specs by Microvers are available [here](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561)
 
-## About the project
-
-- This project consists of bulding the "frienship" functionality on top of an existing repo.
 - Project Links
   - Production link: [Production link](https://quarantine-stories.herokuapp.com/)
   - Staging Link: [Staging  link](https://infinite-retreat-30494.herokuapp.com/)
@@ -34,7 +33,15 @@ The UI of this project is adapted from [liFEsTlye](https://www.behance.net/galle
 
 ## Features
 
-TBA
+Some of the features on the projects include:
+
+- User account creation
+- Session creation when user logs in using the correct name
+- Logout feature for session nullification
+- Article creation page
+- Category Creation page
+- Votes to rate an article
+- Dislike button to destroy a given vote.
 
 ## Technologies Used
 
