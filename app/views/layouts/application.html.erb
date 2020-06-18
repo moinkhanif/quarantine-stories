@@ -16,12 +16,12 @@
           <li><%= link_to image_tag("logo/logonav.png",  alt: "Logo"), root_path , class:  "logo" %></li>
         </ul>
         <ul class="d-flex">
-          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "HOME", root_path %></li>
           <% five_categories.each do |cat|  %>
-            <li> <%= link_to cat.name, category_path(cat)%> </li>
+            <li> <%= link_to cat.name.upcase, category_path(cat)%> </li>
           <% end if !five_categories.empty? %>
           <% if all_categories.size > 6 %>
-            <li> <%= link_to "All Categories", category_index_path%> </li>
+            <li> <%= link_to "ALL CATEGORIES", "#"%> </li>
           <% end %>
         </ul>
         <ul class="d-flex">
@@ -32,10 +32,10 @@
               <li> <%= link_to "Create Category", new_category_path %> </li>
             </ul>
           </li>
-          <li><%= link_to "Logout", logout_path %></li>
+          <li><%= link_to "LOGOUT", logout_path %></li>
         <% else %>
-          <li> <%= link_to "Sign in", login_path %> </li> |
-          <li> <%= link_to "Sign up", signup_path %> </li>
+          <li> <%= link_to "SIGN IN", login_path %> </li> |
+          <li> <%= link_to "SIGN UP", signup_path %> </li>
         <% end %>
           <li><%= link_to image_tag("search.svg"), "#",  class: "search" %></li>
         </ul>

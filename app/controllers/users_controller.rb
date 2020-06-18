@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    # all_categories
   end
 
   def create

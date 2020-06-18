@@ -79,6 +79,15 @@ li {
   margin: auto 10px;
 }
 
+.top-nav li a {
+  color: gray;
+  font-weight: 600;
+}
+
+.top-nav li a:hover {
+  color: rgb(253,96,0);
+}
+
 .nav li {
   margin: auto 10px;
 }
@@ -103,7 +112,7 @@ li {
   display: inline-block;
   width: 120px;
   background-color: whitesmoke;
-  padding: 5px 20px 5px 0;
+  padding: 5px 20px 5px 10px;
 }
 
 .multi-li span {
@@ -116,7 +125,7 @@ li {
 }
 
 main {
-  padding: 20px;
+  padding: 0 20px;
   min-height: 60vh;
 }
 main form {

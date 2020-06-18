@@ -7,12 +7,11 @@
   display: flex;
 
   .featured-articles {
-    width: 80%;;
+    width: 75%;;
     height: 100%;
     article {
       height: 100%;
       position: relative;
-      // background-repeat: no-repeat !important;
       background-size: cover !important;
       .article-title {
         position: absolute;
@@ -24,7 +23,7 @@
     }
   }
   .weather {
-    width: 20%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +43,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    h2 a {
+      border-bottom: 3px solid rgb(254,254,0);
+      padding-bottom: 3px;
+    }
     h2 a,
     h3 {
       color: whitesmoke;
