@@ -1,10 +1,10 @@
 <div class="page-title">
   <h1>Create new category:</h1>
 </div>
-<%= form_with model: @category, url: '/category' do |c| %>
-  Enter the Category name: <br>
+<%= form_with model: @category, url: '/category', class: "creation-form" do |c| %>
+  Enter the Category name: <br><br>
   <%= text_field :category, :name %> <br><br>
-  Enter category priority: <br>
+  Enter category priority: <br><br>
   <%= number_field :category, :priority%> <br><br>
   <%= c.submit "Create Category"%>  
 <% end %>
