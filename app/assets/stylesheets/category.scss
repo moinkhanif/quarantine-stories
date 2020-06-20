@@ -1,10 +1,14 @@
 // Place all the styles related to the category controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+.category-title {
+  color: rgb(249,159,10);
+  border-bottom: 3px solid rgb(249,159,10);
+  width: fit-content;
+  margin-bottom: 10px;
+}
 .category-articles {
-  max-width: 90%;
-  margin: 30px auto;
+  margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
   .no-content {

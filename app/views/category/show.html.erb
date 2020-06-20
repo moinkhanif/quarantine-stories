@@ -1,9 +1,7 @@
-<div class="page-title">
-  <h1>Category: <%= @category.name%> </h1>
-</div>
 <div class="category-articles">
   <% if @articles.empty? %>
     <div class="no-content">
+      <h1 class="category-title">Category: <%= @category.name%> </h1>
       <h2>No Articles to show</h2>
     </div>
   <% else %>
@@ -14,6 +12,7 @@
         </figure>
         <div class="article-content">
           <div>
+            <h2 class="category-title"><%= @category.name%> </h2>
             <h2 class="article-title"><%= article.title %></h2>
             <h4 class="author">by <%= article.user.name.capitalize %> </h4>
             <p class="article-body"> <%= article.body.truncate(300)%> </p>
