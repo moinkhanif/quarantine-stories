@@ -40,8 +40,8 @@ module CategoryHelper
 
   def votes_button
     concat(content_tag(:div, class: 'article-votes') do
+      article = @cat_article
       if logged_in?
-        article = @cat_article
         vote = article.votes.find_by(user: current_user)
         if vote
           concat(button_to('unvote', article_vote_path(article_id: article.id), method: :delete))
