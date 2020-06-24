@@ -42,6 +42,10 @@ li {
   list-style: none;
 }
 
+.article-background-random {
+  background: linear-gradient(to bottom,rgba(0, 0, 0, 0.25), rgb(0, 0, 0, 0.9) 100%), url('https://source.unsplash.com/random') no-repeat center;
+}
+
 .alert,
 .notice {
   color: white;
