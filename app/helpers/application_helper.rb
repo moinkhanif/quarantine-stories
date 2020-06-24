@@ -29,16 +29,15 @@ module ApplicationHelper
     end.join.html_safe if !flash.empty?
   end
   def category_nav_links
-    five_categories.map do |cat|
-      content_tag(:li) do
-        link_to cat.name.upcase, category_path(cat)
+    if !five_categories.empty?
+      concat(five_categories.map do |cat|
+        content_tag(:li) do
+          link_to cat.name.upcase, category_path(cat)
+        end
+      end.join.html_safe)
+      if all_categories.size > 5
+        tag.li link_to "ALL CATEGORIES", "#"
       end
-    end.join.html_safe if !five_categories.empty?
-    # tag.li link_to "ALL CATEGORIES", "#"
-  end
-  def category_index_link
-    # if all_categories
-      concat(tag.li link_to "ALL CATEGORIES", "#")
-    # end
+    end
   end
 end
