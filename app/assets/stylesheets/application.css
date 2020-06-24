@@ -139,7 +139,8 @@ main form {
 .creation-form input[type="text"],
 .creation-form  input[type="submit"],
 .creation-form select,
-.creation-form textarea {
+.creation-form textarea,
+.article-votes input[type="submit"] {
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -154,9 +155,16 @@ main form {
   margin-top: 5px;
 }
 
-.creation-form input[type="submit"] {
+.creation-form input[type="submit"],
+.article-votes input[type="submit"],
+.sign-inup-form input[type="submit"]{
   padding: 10px;
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(253,96,0);
+  color: whitesmoke;
+}
+
+.button_to input[disabled="disabled"] {
+  background-color: gray;
 }
 
 .logo > img {

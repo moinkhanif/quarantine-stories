@@ -56,6 +56,4 @@ module CategoryHelper
       end)
     end)
   end
-
-  def article_image_url; end
 end

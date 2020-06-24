@@ -11,5 +11,10 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe HomeHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'when no article image exists' do
+    it 'returns default image url' do
+      image_style = article_background_styles(nil)
+      expect(image_style).to include("url('https://source.unsplash.com/random')")
+    end
+  end
 end
