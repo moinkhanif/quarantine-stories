@@ -146,6 +146,10 @@ main form {
 }
 
 .creation-form input[type="text"] {
+  width: 100%;
+}
+
+.creation-form input[type="text"] {
   background-color: rgb(255, 217, 157);
   margin-top: 5px;
 }
