@@ -10,5 +10,10 @@ RSpec.describe User, type: :model do
       b = User.new
       expect(b.save).to eql(false)
     end
+    it 'returns false when user already exists' do
+      u1 = User.create(name: 'testie')
+      u2 = User.new(name: u1.name)
+      expect(u2.valid?).to eql(false)
+    end
   end
 end
