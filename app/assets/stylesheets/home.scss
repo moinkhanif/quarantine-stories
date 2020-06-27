@@ -2,50 +2,56 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.featured-row {
+  height: 500px;
+  display: flex;
 
-body {
-  background-color: #726a95;
-  font-family: Arial, Helvetica, sans-serif;
-
-  #coming-soon {
-    height: 100vh;
-    width: 100vw;
+  .featured-articles {
+    width: 75%;;
+    height: 100%;
+    article {
+      height: 100%;
+      position: relative;
+      background-size: cover !important;
+      .article-title {
+        position: absolute;
+        bottom: 0;
+        padding: 30px;
+        font-size: 2rem;
+        color: rgb(253,96,0);
+      }
+    }
+  }
+  .weather {
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    h1 {
-      color: #f4ebc1;
-      font-size: 3rem;
-
-      &::after {
-        content: '';
-        height: 3px;
-        width: 300px;
-        display: block;
-        left: 0;
-        background: linear-gradient(to right,#7E0F4B, #1A5865);
-        position: absolute;
-        animation: foreva-slide 6s alternate infinite;
-      }
+    background-image: url("https://cdn.pixabay.com/photo/2020/06/14/22/46/the-caucasus-5299607_1280.jpg");
+    img {
+      width: 200px;
     }
+  }
+}
 
-    #author {
+.featured-categories {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-auto-rows: 300px;
+  article {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 a {
+      border-bottom: 3px solid rgb(254,254,0);
+      padding-bottom: 3px;
+    }
+    h2 a,
+    h3 {
       color: whitesmoke;
-      text-decoration: none;
-      position: absolute;
-      bottom: 2rem;
-      right: 2rem;
-      font-size: 2rem;
     }
   }
+}
 
-@keyframes foreva-slide {
-  50% {
-    width: 100%;
-  }
-  100%{
-    width: 0;
-  }
-}
-}
+

@@ -20,3 +20,186 @@
    margin: 0;
    padding: 0;
  }
+
+ body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(78,68,62);
+}
+
+body > * {
+  background-color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: rgb(253,96,0);
+}
+
+li {
+  list-style: none;
+}
+
+.alert,
+.notice {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px 1px 10px 1px;
+}
+.alert {
+  background-color: rgb(194, 73, 73);
+}
+
+.notice {
+  background-color: seagreen;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 20px;
+  height: 80px;
+}
+
+.nav .search img {
+  height: 15px;
+  width: 15px;
+}
+
+.nav span {
+  margin: auto 10px;
+}
+
+.top-nav li a {
+  color: gray;
+  font-weight: 600;
+}
+
+.top-nav li a:hover {
+  color: rgb(253,96,0);
+}
+
+.nav li {
+  margin: auto 10px;
+}
+
+
+.multi-li {
+  position: relative;
+}
+
+.multi-li:hover ul {
+  display: block;
+}
+
+.multi-li ul {
+  position: absolute;
+  display: none;
+  padding-top: 10px;
+}
+
+.multi-li li {
+  margin: 0;
+  display: inline-block;
+  width: 120px;
+  background-color: whitesmoke;
+  padding: 5px 20px 5px 10px;
+}
+
+.multi-li span {
+  margin: 0;
+  margin-left: 2px;
+}
+
+.multi-li .down-arrow {
+  width: 10px;
+}
+
+main {
+  padding: 0 20px;
+  min-height: 60vh;
+}
+main form {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+}
+
+.creation-form {
+  padding-bottom: 30px;
+}
+
+.creation-form input[type="text"],
+.creation-form  input[type="submit"],
+.creation-form select,
+.creation-form textarea,
+.article-votes input[type="submit"] {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.creation-form input[type="text"] {
+  width: 100%;
+}
+
+.creation-form input[type="text"] {
+  background-color: rgb(255, 217, 157);
+  margin-top: 5px;
+}
+
+.creation-form input[type="submit"],
+.article-votes input[type="submit"],
+.sign-inup-form input[type="submit"]{
+  padding: 10px;
+  background-color: rgb(253,96,0);
+  color: whitesmoke;
+}
+
+.button_to input[disabled="disabled"] {
+  background-color: gray;
+}
+
+.logo > img {
+  max-width: 300px;
+  margin-top: 10px;
+  object-fit: contain;
+  overflow: hidden;
+  text-align: end;
+}
+
+.social > img {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgb(253,96,0);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(253,96,0);
+}
+
+footer {
+  background-color: rgb(78,68,62);
+  color: aliceblue;
+}
+
+footer a {
+  color: rgb(253,96,0);
+}
+
+footer .logo {
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
