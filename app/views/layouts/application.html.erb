@@ -10,6 +10,50 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="d-flex nav top-nav">
+        <ul>
+          <li><%= link_to image_tag("logo/logonav.png",  alt: "Logo"), root_path , class:  "logo" %></li>
+        </ul>
+        <ul class="d-flex">
+          <li><%= link_to "HOME", root_path %> </li>
+          <%= category_nav_links %>
+        </ul>
+        <ul class="d-flex">
+          <%= loggedin_link_logic %>
+          <li><%= link_to image_tag("search.svg"), "#",  class: "search" %></li>
+        </ul>
+      </nav>
+    </header>
+    <%= flash_info %>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="nav d-flex">
+        <ul>
+          <li><%= link_to "Quarantine Stories", root_path , class:  "logo" %></li>
+        </ul>
+        <div class="d-flex">
+          <ul class="d-flex">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#">Terms and conditions</a>
+            </li>
+          </ul>
+          <span>Copyright &copy;2020. All rights reserved</span>
+        </div>
+        <div class="d-flex">
+          <span>Connect with us:</span>
+          <ul class="d-flex">
+            <li><%= link_to image_tag("twitter.svg",  alt: "Twitter Icon"), root_path , class:  "social" %></li>
+            <li><%= link_to image_tag("instagram-sketched.svg",  alt: "Instagram Icon"), root_path , class:  "social" %></li>
+            <li><%= link_to image_tag("facebook.svg",  alt: "Facebook Icon"), root_path , class:  "social" %></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

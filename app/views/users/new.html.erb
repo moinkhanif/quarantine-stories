@@ -1,0 +1,8 @@
+<div class="page-title">
+  <h1>SIGN UP:</h1>
+</div>
+<%= form_with(model: @user, class: 'sign-inup-form') do |u| %>
+  Enter your name:  <br>
+  <%= text_field(:user,:name)  %> <br><br>
+  <%= u.submit "Signup" %>
+<% end %>

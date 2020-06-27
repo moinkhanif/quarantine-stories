@@ -1,0 +1,12 @@
+<h1 class="page-title">Create New Article:</h1>
+<%= form_with model: @article, url: article_index_path,html: {multipart: true}, class: "creation-form" do |a|%>
+  Enter Article title: <br>
+  <%= text_field(:article, :title)%> <br> <br>
+  Enter the content of the Article: <br><br>
+  <%= text_area :article, :body, rows: 10, cols: 50%> <br><br>
+  Enter a category for this article: <br>
+  <%= collection_select(:article,:category_id, Category.all, :id, :name) %> <br><br>
+  Attach an Image<br />
+  <%= file_field(:article,:image) %> <br> <br>
+  <%= a.submit "Submit Article"%>
+<% end %>
