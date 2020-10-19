@@ -43,6 +43,11 @@ Some of the features on the projects include:
 - Votes to rate an article
 - Dislike button to destroy a given vote.
 
+## Potential Future Features
+
+  - Better UI/UX
+  - Responsive design for smaller screens
+
 ## Technologies Used
 
 - This project utilizes the Rails framework.
