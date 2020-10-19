@@ -9,7 +9,7 @@
 
 ## About the project
 
-The idea of this project is for users to document your journey during quarentine and for indivituals to share their experiences during this tough time - 2020.
+The idea of this project is for users to document your journey during quarantine and for individuals to share their experiences during this tough time - 2020.
 
 ## Project specifications
 
@@ -29,14 +29,14 @@ The UI of this project is adapted from [liFEsTlye](https://www.behance.net/galle
 
 - Once you download the project, please make sure that you have [Ruby](https://www.ruby-lang.org/en/) installed.
 - Install `rails 5.2.3` if you haven't already. You could run the command `gem install rails -v '5.2.3'` to install rails.
-- Make sure to run `bundle` command in the terminal once you are in the working directory.
+- Make sure to run the `bundle` command in the terminal once you are in the working directory.
 
 ## Features
 
 Some of the features on the projects include:
 
 - User account creation
-- Session creation when user logs in using the correct name
+- Session creation when the user logs in using the correct name
 - Logout feature for session nullification
 - Article creation page
 - Category Creation page
@@ -59,7 +59,7 @@ Some of the features on the projects include:
 
 - Moin Khan
   - LinkedIn : [@MoinKhanIF](https://www.linkedin.com/in/moinkhanif/)
-  - Personal Website: [MoinKhan.Info](https://moinkhan.info)
+  - Personal Website: [MoinKhanIF.dev](https://moinkhanif.dev)
   - Twitter: [@MoinKhanIF](https://twitter.com/MoinKhanIF)
   
 <!-- MARKDOWN LINKS & IMAGES -->
