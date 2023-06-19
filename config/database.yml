@@ -81,6 +81,6 @@ test:
 production:
   <<: *default
   database: quarantine_stories_production
-  # host: localhost
-  # username: quarantine_stories
-  # password: 'abc123'
+  username: quarantine_stories
+  url: <%= ENV['internal_database_url'] %>
+  password: <%= ENV['pro_user_password'] %>
