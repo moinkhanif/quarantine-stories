@@ -36,11 +36,11 @@ module HomeHelper
     style + if article
               "url(#{article_images(article)}) no-repeat center;"
             else
-              "url('https://source.unsplash.com/random') no-repeat center;"
+              "url('https://source.unsplash.com/random/?happy') no-repeat center;"
             end
   end
 
   def article_images(article)
-    article.image.exists? ? article.image.url : 'https://source.unsplash.com/random'
+    article.image.exists? ? article.image.url : 'https://source.unsplash.com/random/?happy'
   end
 end
