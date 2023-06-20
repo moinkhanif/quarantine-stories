@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: quarantine_stories_production
   username: quarantine_stories
-  url: <%= ENV['internal_database_url'] %>
   password: <%= ENV['pro_user_password'] %>
