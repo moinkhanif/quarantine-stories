@@ -8,7 +8,7 @@ RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
       build-essential \
       libpq-dev \
-      python3 \
+      python2 \
       curl \
     && rm -rf /var/lib/apt/lists/*
 
@@ -16,8 +16,8 @@ RUN apt-get update -qq && \
 RUN curl -fsSL https://nodejs.org/dist/v18.20.4/node-v18.20.4-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1 && \
     node --version && npm --version
 
-# node-sass needs Python for native compilation
-ENV PYTHON=/usr/bin/python3
+# node-sass needs Python 2 for native compilation
+ENV PYTHON=/usr/bin/python2
 
 # Install Yarn
 RUN npm install -g yarn && \
