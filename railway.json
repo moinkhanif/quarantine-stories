@@ -5,7 +5,8 @@
     "dockerfilePath": "Dockerfile"
   },
   "deploy": {
-    "startCommand": "bundle exec rake db:migrate 2>&1 && bundle exec puma -C config/puma.rb",
+    "preDeployCommand": "bundle exec rake db:migrate 2>&1",
+    "startCommand": "bundle exec puma -C config/puma.rb 2>&1",
     "healthcheckPath": "/",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10

@@ -63,5 +63,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:${PORT:-3000}/ || exit 1
 
-# Run database migrations on startup (log failures), then start Puma on Railway's PORT
-CMD ["sh", "-c", "echo 'Running migrations...' && bundle exec rake db:migrate 2>&1 || echo 'Migration issue (non-fatal, will retry on next deploy)' && echo 'Starting Puma...' && bundle exec puma -C config/puma.rb"]
+# Run database migrations as preDeployCommand in railway.json, then start Puma
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
