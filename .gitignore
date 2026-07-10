@@ -28,6 +28,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# Encrypted credentials — we use Railway env vars (SECRET_KEY_BASE) instead
+/config/credentials.yml.enc
 
 /public/packs
 /public/packs-test
