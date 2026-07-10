@@ -41,7 +41,7 @@ articles = [
       My kitchen smelled like a bakery 24/7. No regrets.
     BODY
     category: "Baking",
-    image: "https://images.unsplash.com/photo-1586788680436-30e324b4d3f4?w=600",
+    image_url: "https://picsum.photos/seed/banana/800/600",
   },
   {
     title: "I Started a Sourdough Starter Named Doughvid 🥖",
@@ -51,7 +51,7 @@ articles = [
       Is this my life now? Yes. Yes it is.
     BODY
     category: "Baking",
-    image: "https://images.unsplash.com/photo-1509440159599-0249088772ff?w=600",
+    image_url: "https://picsum.photos/seed/sourdough/800/600",
   },
   {
     title: "My Plants Have Names Now 🪴",
@@ -62,7 +62,7 @@ articles = [
       My flat is a jungle now. I've never been happier.
     BODY
     category: "Hobbies",
-    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600",
+    image_url: "https://picsum.photos/seed/plants/800/600",
   },
   {
     title: "The 1000-Piece Puzzle That Took 3 Weeks 🧩",
@@ -73,7 +73,7 @@ articles = [
       Day 21: FINISHED. Immediately bought another one.
     BODY
     category: "Hobbies",
-    image: "https://images.unsplash.com/photo-1611996575749-79a3a250f5d1?w=600",
+    image_url: "https://picsum.photos/seed/puzzle/800/600",
   },
   {
     title: "I Learned to Paint. I'm Not Good. I Don't Care. 🎨",
@@ -84,7 +84,7 @@ articles = [
       felt incredible. My fridge has never been more decorated.
     BODY
     category: "Hobbies",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600",
+    image_url: "https://picsum.photos/seed/paint/800/600",
   },
   {
     title: "We Adopted a Cat Named Quaran-tina 🐱",
@@ -94,7 +94,7 @@ articles = [
       life choices, and has taken over 70% of my bed. Best decision ever.
     BODY
     category: "Home Life",
-    image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600",
+    image_url: "https://picsum.photos/seed/cat/800/600",
   },
   {
     title: "The Toilet Paper Chronicles 🧻",
@@ -105,7 +105,7 @@ articles = [
       Send help. And maybe some tissues.
     BODY
     category: "Home Life",
-    image: "https://images.unsplash.com/photo-1584636182450-7c3d696a0e21?w=600",
+    image_url: "https://picsum.photos/seed/toiletpaper/800/600",
   },
   {
     title: "Zoom Bloopers: The Compilation 💻",
@@ -117,7 +117,7 @@ articles = [
       We've all been there.
     BODY
     category: "Zoom Life",
-    image: "https://images.unsplash.com/photo-1612081421623-1430eaae9f8d?w=600",
+    image_url: "https://picsum.photos/seed/zoom/800/600",
   },
   {
     title: "Haircuts at Home: A Tragedy in 3 Acts ✂️",
@@ -128,7 +128,7 @@ articles = [
       I wore a beanie to a wedding. No regrets.
     BODY
     category: "Zoom Life",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600",
+    image_url: "https://picsum.photos/seed/haircut/800/600",
   },
   {
     title: "I Started Running. Jogging. Walking Briskly. 🏃",
@@ -140,7 +140,7 @@ articles = [
       it saved my sanity during those months.
     BODY
     category: "Wellness",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600",
+    image_url: "https://picsum.photos/seed/running/800/600",
   },
   {
     title: "Zoom Yoga: I Fell Off My Mattress 🧘",
@@ -151,7 +151,7 @@ articles = [
       The instructor asked if I was okay. I said yes. We both knew it was a lie.
     BODY
     category: "Wellness",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600",
+    image_url: "https://picsum.photos/seed/yoga/800/600",
   },
 ]
 
@@ -161,7 +161,7 @@ articles.each do |attrs|
     a.body = attrs[:body]
     a.category = category
     a.user = author
-    a.image = attrs[:image]
+    a.image_url = attrs[:image_url]
   end
   puts "  📝 Article: #{article.title[0..50]}..."
 end

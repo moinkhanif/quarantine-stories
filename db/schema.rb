@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_153030) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.text "image_url"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end

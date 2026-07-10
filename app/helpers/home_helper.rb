@@ -36,11 +36,17 @@ module HomeHelper
     style + if article
               "url(#{article_images(article)}) no-repeat center;"
             else
-              "url('https://source.unsplash.com/random/?happy') no-repeat center;"
+              "url('https://picsum.photos/seed/default/800/600') no-repeat center;"
             end
   end
 
   def article_images(article)
-    article.image.exists? ? article.image.url : 'https://source.unsplash.com/random/?happy'
+    if article.image_url.present?
+      article.image_url
+    elsif article.image.exists?
+      article.image.url
+    else
+      'https://picsum.photos/seed/default/800/600'
+    end
   end
 end
