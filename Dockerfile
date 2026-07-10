@@ -1,24 +1,19 @@
 # Quarantine Stories — Dockerfile for Railway deployment
 # Ruby 2.7 + Rails 6 + PostgreSQL + Webpacker
 
-FROM ruby:2.7-slim AS build
+FROM ruby:2.7-bullseye AS build
 
-# Install system dependencies for building native gems and JS assets
+# Install system dependencies for building native gems
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
       build-essential \
       libpq-dev \
       curl \
-      gnupg \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 18 and Yarn (Webpacker 4 works with Node 18)
-# Use the NodeSource repo directly with proper key setup
-RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x bullseye main" > /etc/apt/sources.list.d/nodesource.list && \
-    apt-get update -qq && \
-    apt-get install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
+# Install Node.js 18 from official binary tarball (avoids Nodesource GPG key issues)
+RUN curl -fsSL https://nodejs.org/dist/v18.20.4/node-v18.20.4-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1 && \
+    node --version && npm --version
 
 # Install Yarn
 RUN npm install -g yarn && \
@@ -37,7 +32,7 @@ RUN yarn install --frozen-lockfile
 # Copy application code
 COPY . .
 
-# Precompile assets (with RAILS_ENV=production, SECRET_KEY_BASE dummy for assets:precompile)
+# Precompile assets (with RAILS_ENV=production, dummy SECRET_KEY_BASE for assets:precompile)
 RUN SECRET_KEY_BASE=dummy RAILS_ENV=production bundle exec rake assets:precompile
 
 # ============================================
