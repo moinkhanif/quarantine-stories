@@ -12,8 +12,10 @@ RUN apt-get update -qq && \
       curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 18 from official binary tarball (avoids Nodesource GPG key issues)
-RUN curl -fsSL https://nodejs.org/dist/v18.20.4/node-v18.20.4-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1 && \
+# Install Node.js 14 from official binary tarball (avoids Nodesource GPG key issues)
+# Node 14 is required because @rails/webpacker 4.3.0 pulls in node-sass 4.14.1,
+# which only supports Node <= 14. Node 18+ breaks native compilation.
+RUN curl -fsSL https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1 && \
     node --version && npm --version
 
 # node-sass needs Python 2 for native compilation
@@ -46,6 +48,7 @@ RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
       libpq-dev \
       curl \
+      shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
