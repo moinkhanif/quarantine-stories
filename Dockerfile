@@ -12,8 +12,11 @@ RUN apt-get update -qq && \
       gnupg \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 14 (required by Webpacker 4)
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+# Install Node.js 18 and Yarn (Webpacker 4 works with Node 18)
+# Use the NodeSource repo directly with proper key setup
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x bullseye main" > /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update -qq && \
     apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
 
@@ -34,8 +37,8 @@ RUN yarn install --frozen-lockfile
 # Copy application code
 COPY . .
 
-# Precompile assets
-RUN bundle exec rake assets:precompile
+# Precompile assets (with RAILS_ENV=production, SECRET_KEY_BASE dummy for assets:precompile)
+RUN SECRET_KEY_BASE=dummy RAILS_ENV=production bundle exec rake assets:precompile
 
 # ============================================
 FROM ruby:2.7-slim AS runtime
