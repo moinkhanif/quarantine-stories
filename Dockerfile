@@ -3,17 +3,21 @@
 
 FROM ruby:2.7-bullseye AS build
 
-# Install system dependencies for building native gems
+# Install system dependencies for building native gems and npm modules
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
       build-essential \
       libpq-dev \
+      python3 \
       curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js 18 from official binary tarball (avoids Nodesource GPG key issues)
 RUN curl -fsSL https://nodejs.org/dist/v18.20.4/node-v18.20.4-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1 && \
     node --version && npm --version
+
+# node-sass needs Python for native compilation
+ENV PYTHON=/usr/bin/python3
 
 # Install Yarn
 RUN npm install -g yarn && \
