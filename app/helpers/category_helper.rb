@@ -14,7 +14,13 @@ module CategoryHelper
         @cat_article = article
         content_tag :article do
           concat(content_tag(:figure) do
-            article.image.exists? ? concat(image_tag(article.image.url)) : concat(image_tag('https://source.unsplash.com/random/?happy'))
+            if article.image_url.present?
+              concat(image_tag(article.image_url))
+            elsif article.image.exists?
+              concat(image_tag(article.image.url))
+            else
+              concat(image_tag('https://picsum.photos/seed/default/800/600'))
+            end
           end)
           concat(content_tag(:div, class: 'article-content') do
             concat(content_tag(:div) do
